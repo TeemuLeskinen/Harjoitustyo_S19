@@ -25,12 +25,4 @@
         
         <div id="content">
         This is the content        
-        </div>
         
-        <div id="footer">
-        Footer        
-        </div>
-
-    </body>
-
-</html>
