@@ -2,18 +2,25 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset = "utf-8">
-        <title> SNOWBOARDSHOP.COM</title>    
+        <title> SNOWBOARDSHOP.COM</title> 
+        <link rel = "stylesheet" href = "CSS/mystyle.css">   
     </head>
     
     <body>
-        <div id="snowboards">
-        Snowboards        
+        <div id="header">
+        Snowboardshop.com        
         </div>
-        <div id="boots">
-        Snowboard boots        
+
+        <div id="menu">
+        Menu        
         </div>
-        <div id="bindings">
-        Snowboard bindings        
+        
+        <div id="menu">
+        Menu        
+        </div>
+        
+        <div id="footer">
+        Footer        
         </div>
 
     </body>
