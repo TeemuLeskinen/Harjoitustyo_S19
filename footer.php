@@ -1,6 +1,6 @@
 </div>        
 <div id="footer">
-    Footer        
+© Teemu Leskinen 2019        
 </div>
 </body>
 </html>

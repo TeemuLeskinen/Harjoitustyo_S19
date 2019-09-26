@@ -7,9 +7,9 @@
     </head>
     
     <body>
-        <div id="header">
+        <h1 id="header">
         Snowboardshop.com        
-        </div>
+        </h1>
 
         <div id="menu">
          <ul>
