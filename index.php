@@ -1,6 +1,17 @@
 <?php include "menu.php"; ?>
-	<h2>Main Page</h2>
-	<p>
-		This is the Main Page.
-	</p>
-	<?php include "footer.php"; ?>
+<?php
+	session_start();
+	if(isset($_SESSION['logged_in']))
+	{
+		echo '<h2>Welcome to Snowboardshop.com <br> </h2>';
+		echo '<p>'.$_SESSION['username']. '</p>';
+	}
+	else
+	{
+		echo '<p>Welcome to Snowboardshop.com as a Guest</p>';
+		echo '<br>';
+		echo '<p> Please log in to start shopping</p>';
+	}
+?>
+
+<?php include "footer.php"; ?>  

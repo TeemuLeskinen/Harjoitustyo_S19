@@ -2,6 +2,7 @@
 	<h2>Shopping Cart</h2>
 	<p>
 		Your Shopping Cart:
+		<?php print_r($_POST); ?>
 	</p>
-	<?php print_r($_POST); ?>
+	
 	<?php include "footer.php"; ?>

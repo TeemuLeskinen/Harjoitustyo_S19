@@ -18,6 +18,9 @@
             <li><a href="boots.php">Snowboard Boots</a></li>
             <li><a href="bindings.php">Snowboard Bindings</a></li>
             <li><a href="shoppingcart.php">Shopping Cart</a></li>
+            <li><a href="login_form.php">Log In</a></li>
+            <li><a href="logout.php">Log Out</a></li>
+
 		
 	     </ul>
 	        
