@@ -8,7 +8,7 @@
 	}
 	else
 	{
-		echo '<p>Welcome to Snowboardshop.com as a Guest</p>';
+		echo '<h2>Welcome to Snowboardshop.com as a Guest</h2>';
 		echo '<br>';
 		echo '<p> Please log in to start shopping</p>';
 	}

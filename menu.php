@@ -27,5 +27,5 @@
         </div>
         
         <div id="content">
-        This is the content        
+                
         
