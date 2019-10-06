@@ -1,0 +1,41 @@
+//Tuotekategorioiden lisays
+INSERT INTO productcategory VALUES(NULL,'Snowboards');
+INSERT INTO productcategory VALUES(NULL,'Snowboard Boots');
+INSERT INTO productcategory VALUES(NULL,'Snowboard Bindings');
+
+//Tuotekategoriat 1 = Snowboards, 2 = Snowboard Boots, 3 = Snowboard Bindings
+
+//Tuotteiden lisays
+//Lumilaudat
+INSERT INTO product VALUES(NULL,'Burton','Custom','150','4','599','1');
+INSERT INTO product VALUES(NULL,'Burton','Custom','156','2','599','1');
+INSERT INTO product VALUES(NULL,'Burton','Custom','160','5','599','1');
+INSERT INTO product VALUES(NULL,'Nitro','T1','150','4','499','1');
+INSERT INTO product VALUES(NULL,'Nitro','T1','156','3','499','1');
+INSERT INTO product VALUES(NULL,'Nitro','T1','160','2','499','1');
+
+
+//Lumilautakengat
+INSERT INTO product VALUES(NULL,'Burton','Moto','40','2','199','2');
+INSERT INTO product VALUES(NULL,'Burton','Moto','42','5','199','2');
+INSERT INTO product VALUES(NULL,'Burton','Moto','44','3','199','2');
+INSERT INTO product VALUES(NULL,'Nitro','Vagabond','40','4','239','2');
+INSERT INTO product VALUES(NULL,'Nitro','Vagabond','42','6','239','2');
+INSERT INTO product VALUES(NULL,'Nitro','Vagabond','44','3','239','2');
+
+
+//Lumilautasiteet
+INSERT INTO product VALUES(NULL,'Burton','Hitchhiker','S','4','299','3');
+INSERT INTO product VALUES(NULL,'Burton','Hitchhiker','M','6','299','3');
+INSERT INTO product VALUES(NULL,'Burton','Hitchhiker','L','4','299','3');
+INSERT INTO product VALUES(NULL,'K2','Mach','40','4','239','2');
+INSERT INTO product VALUES(NULL,'K2','Mach','42','6','239','2');
+INSERT INTO product VALUES(NULL,'K2','Mach','44','3','239','2');
+
+//Asiakastietojen lisäys
+INSERT INTO customer VALUES(NULL,'Bobby','pass1','Bob','Brown','Imaginary Street 1',NULL, '0502342343');
+INSERT INTO customer VALUES(NULL,'Jimbo','pass2','Jim','Johnson','Imaginary Street 2',NULL, '0504524356');
+INSERT INTO customer VALUES(NULL,'Lizz','pass3','Lisa','Johnson','Imaginary Street 2',NULL, '0505637866');
+INSERT INTO customer VALUES(NULL,'Max','pass4','Max','Parrot','Green Lake Street 23',NULL, '0506114590');
+INSERT INTO customer VALUES(NULL,'Flying Tomato','pass5','Shaun','White','Mountain Lane 12',NULL, '0507866545');
+INSERT INTO customer VALUES(NULL,'Anna','pass6','Anna','Gasser','Snowstreet 10',NULL, '0508759487');
