@@ -10,6 +10,7 @@
 	{
 		echo '<h2>Welcome to Snowboardshop.com as a Guest</h2>';
 		echo '<br>';
+		echo '<br>';
 		echo '<p> Please log in to start shopping</p>';
 	}
 ?>
