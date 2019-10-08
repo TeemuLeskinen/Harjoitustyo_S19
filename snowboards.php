@@ -1,4 +1,5 @@
 <?php include "menu.php"; ?>
+<?php include "connection.php"; ?>
 	<h2>Snowboards</h2>
 	<p>	
 				
@@ -7,8 +8,9 @@
 		$board1 = '<h3>Burton Custom 2020</h3>'; 
 		echo $board1;
 		echo '<br>';
-		$price1 = '<h4>499€</h4>';
-		echo '<p>Price:</p>';
+		$price1 = $db->prepare('SELECT price FROM product WHERE idproduct="1"'); //Ei toimi
+		$price1->execute();
+		//echo '<p>Price:</p>';
 		echo $price1;		
 		?>
 		<br>
@@ -55,4 +57,5 @@
 			<br>
 			<input type="submit" name="" value="Add to Cart">
 	</p>
+
 	<?php include "footer.php"; ?>
