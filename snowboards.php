@@ -8,8 +8,8 @@
 		$board1 = '<h3>Burton Custom 2020</h3>'; 
 		echo $board1;
 		echo '<br>';
-		$price1 = $db->prepare('SELECT price FROM product WHERE idproduct="1"'); //Ei toimi
-		$price1->execute();
+		$result = ("SELECT price FROM product WHERE idproduct='1'"); //Ei toimi
+		$price1 = $result->fetch(PDO::FETCH_COLUMN);
 		//echo '<p>Price:</p>';
 		echo $price1;		
 		?>
