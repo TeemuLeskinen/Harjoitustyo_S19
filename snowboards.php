@@ -8,11 +8,16 @@
 		$board1 = '<h3>Burton Custom 2020</h3>'; 
 		echo $board1;
 		echo '<br>';
-		$result = ("SELECT price FROM product WHERE idproduct='1'"); //Ei toimi
-		$price1 = $result->fetch(PDO::FETCH_COLUMN);
-		//echo '<p>Price:</p>';
-		echo $price1;		
+		$stmt = $db->prepare ("SELECT price FROM product WHERE idproduct=1"); //Ei toimi
+		$stmt->execute();
+		$result = $stmt->fetch(PDO::FETCH_COLUMN);
+		echo '<p>Price:</p>';
+		echo '<br>';
+		print_r($result);		
+		//echo $result;
+		//echo '<h4>'$result'</h4>'
 		?>
+		
 		<br>
 		
 			<form class="" action="shoppingcart.php" method="post">
@@ -25,11 +30,7 @@
 				<br>
 				<br>
 				<input type="submit" name="" value="Add to Cart">
-				</form>
-		
-		
-		
-		
+			</form>		
 			<br>
 			<br>
 			<br>
