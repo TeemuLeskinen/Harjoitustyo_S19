@@ -1,7 +1,7 @@
 <?php
 	try
 	{
-	 $dsn = "mysql:host=localhost;dbname=Projekti";
+	 $dsn = "mysql:host=localhost;dbname=projekti";
 	 $db = new PDO ($dsn, "phpUser", "phpPass");
 	 print ("Connected\n");
 	}
