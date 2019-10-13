@@ -5,7 +5,7 @@
 
 <p>Fill in your information to register:</p><br>
 
-<form class="" action="add_customer" method="post">
+<form class="" action="add_customer.php" method="post">
     <input type="text" name="user" value="" placeholder="Username"><br>
     <input type="password" name="password" value="" placeholder="Password"><br>
     <input type="text" name="fname" value="" placeholder="First Name"><br>

@@ -1,55 +1,52 @@
 <?php include "menu.php"; ?>
+<?php include "connection.php"; ?>
+<?php
+session_start();
+$sql="SELECT * FROM product WHERE idproductcategory = '2'";
+$products = $db->query($sql); 
+?>
 	<h2>Snowboard Boots</h2>
-	<p>	
+	<p>
+	<ul>
+			<?php
+			
+			foreach ($products as $row) {
+				echo '<ul>';
+				echo '<img src="images/'.$row['image'].'" alt="product image"> <br>';
+				echo '<h3>';
+				echo $row['brand'].'';
+				echo ' ';
+				echo $row['name'].'<br>';
+				echo '</h3>';
+				echo '<p>';
+				echo 'Size: ';
+				echo $row['size'].'<br>';
+				echo $row['price'].' € <br>';
+				echo 'Stock: ';
+				echo $row['stock'].'<br>';
+				echo '</p>';
+				echo '<br>';
 				
-	<img src="images/BurtonMoto.png"><br>
-		<?php
-		$boots1 = '<h3>Burton Moto</h3>'; 
-		echo $boots1;
-		echo '<br>';
-		$bootprice1 = '<h4>199€</h4>';
-		echo '<p>Price:</p>';
-		echo $bootprice1;		
-		?>
-		<br>	
-		<form class="" action="shoppingcart.php" method="post">
-			<input type="number" name="Amount" value="" placeholder="Amount"> <br>
-			<label><p>Size<p></label>
-			<select class="" name="bootsize">
-				<option value="40">40</option>
-				<option value="42">42</option>
-				<option value="44">44</option>
-			</select>
-			<br>
-			<br>
-			<input type="submit" name="" value="Add to Cart">
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
+				if(isset($_SESSION['logged_in'])){
+					//echo '<a href="basket.php?idproduct='.$row['idproduct'].'">To basket</a>';
+					echo '<br>';
+					echo '<form action="shoppingcart.php" method="post">';
+					echo '<label>Amount:</label>';
+					echo '<input type="number" name="amount"><br>';
+					echo '<input type="hidden" name="idproduct" value="'.$row['idproduct'].'"';
+					echo '<br>';
+					echo '<p>';
+					echo '<br><input type="submit" value="Add to basket">';
+					echo '</p>';
+					echo '</form>';
+				}
+				echo '</ul>';
+				echo '<hr>';
+			}
+			?>
+		</ul>		
+				
 		
-		<img src="images/NitroVagabond.png"><br>		
-		<?php
-		$boots2 = '<h3>K2 Mach</h3>'; 
-		echo $boots2;
-		echo '<br>';
-		$bootprice2 = '<h4>239€</h4>';
-		echo '<p>Price:</p>';
-		echo $bootprice2;		
-		?>
-		<br>	
-		<form class="" action="shoppingcart.php" method="post">
-			<input type="number" name="Amount" value="" placeholder="Amount"> <br>
-			<label><p>Size<p></label>
-			<select class="" name="bootsize">
-				<option value="40">40</option>
-				<option value="42">42</option>
-				<option value="44">44</option>
-			</select>
-			<br>
-			<br>
-			<input type="submit" name="" value="Add to Cart">	
 					
 	</p>
 	<?php include "footer.php"; ?>

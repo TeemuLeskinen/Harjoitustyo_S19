@@ -1,53 +1,51 @@
 <?php include "menu.php"; ?>
-	<h2>Snowboard Bindings</h2>
-	<p>	
-				
-		<img src="images/Burton_Hitchhiker.png"><br>
-		<?php
-		$binding1 = '<h3>Burton Hitchhiker</h3>'; 
-		echo $binding1;
-		echo '<br>';
-		$bindingprice1 = '<h4>299€</h4>';
-		echo '<p>Price:</p>';
-		echo $bindingprice1;		
-		?>
-		<br>	
-		<form class="" action="shoppingcart.php" method="post">
-			<input type="number" name="Amount" value="" placeholder="Amount"> <br>
-			<select class="" name="bindingsize" placeholder="Size">
-				<option value="S">S</option>
-				<option value="M">M</option>
-				<option value="L">L</option>
-			</select>
-			<br>
-			<br>
-			<input type="submit" name="" value="Add to Cart">
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
+<?php include "connection.php"; ?>
+<?php
+session_start();
+$sql="SELECT * FROM product WHERE idproductcategory = '3'";
+$products = $db->query($sql); 
+?>
 
-		<img src="images/K2_Mach.png"><br>		
-		<?php
-		$binding2 = '<h3>K2 Mach</h3>'; 
-		echo $binding2;
-		echo '<br>';
-		$bindingprice2 = '<h4>239€</h4>';
-		echo '<p>Price:</p>';
-		echo $bindingprice2;		
-		?>
-		<br>	
-		<form class="" action="shoppingcart.php" method="post">
-			<input type="number" name="Amount" value="" placeholder="Amount"> <br>
-			<select class="" name="bindingsize" placeholder="Size">
-				<option value="S">S</option>
-				<option value="M">M</option>
-				<option value="L">L</option>
-			</select>
-			<br>
-			<br>
-			<input type="submit" name="" value="Add to Cart">	
+	<h2>Snowboard Bindings</h2>
+	<p>
+	<ul>
+			<?php
+			
+			foreach ($products as $row) {
+				echo '<ul>';
+				echo '<img src="images/'.$row['image'].'" alt="product image"> <br>';
+				echo '<h3>';
+				echo $row['brand'].'';
+				echo ' ';
+				echo $row['name'].'<br>';
+				echo '</h3>';
+				echo '<p>';
+				echo 'Size: ';
+				echo $row['size'].'<br>';
+				echo $row['price'].' € <br>';
+				echo 'Stock: ';
+				echo $row['stock'].'<br>';
+				echo '</p>';
+				echo '<br>';
+				
+				if(isset($_SESSION['logged_in'])){
+					//echo '<a href="basket.php?idproduct='.$row['idproduct'].'">To basket</a>';
+					echo '<br>';
+					echo '<form action="shoppingcart.php" method="post">';
+					echo '<label>Amount:</label>';
+					echo '<input type="number" name="amount"><br>';
+					echo '<input type="hidden" name="idproduct" value="'.$row['idproduct'].'"';
+					echo '<br>';
+					echo '<br><input type="submit" value="Add to basket">';
+					echo '</form>';
+				}
+				echo '</ul>';
+				echo '<hr>';
+			}
+			?>
+		</ul>	
+				
+			
 			
 	</p>
 	<?php include "footer.php"; ?>

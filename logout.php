@@ -5,4 +5,4 @@
     echo '<p> You are now logged out</p>';
 ?>
 
-<?p include "footer.php"; ?>
+<?php include "footer.php"; ?>
