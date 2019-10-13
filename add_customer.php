@@ -1,5 +1,6 @@
+<?php include "menu.php"; ?>
 <?php  
-print_r($_POST);
+//print_r($_POST);
 include 'connection.php';
 
 $encrypted_pass = password_hash($_POST['password'],PASSWORD_DEFAULT);
@@ -14,7 +15,11 @@ $stmt->bindParam(':email', $_POST['email']);
 $stmt->bindParam(':phonenumber', $_POST['phone']);
 $stmt->execute();
 
+
+echo '<p>Thank you for registering</p>';
 ?>
+
+<?php include "footer.php"; ?>
 
 
 
