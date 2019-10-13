@@ -20,6 +20,7 @@
             <li><a href="shoppingcart.php">Shopping Cart</a></li>
             <li><a href="login_form.php">Log In</a></li>
             <li><a href="logout.php">Log Out</a></li>
+            <li><a href="register.php">Register</a></li>
 
 		
 	     </ul>

@@ -1,58 +1,51 @@
 <?php include "menu.php"; ?>
+<?php include "connection.php"; ?>
+<?php
+session_start();
+$sql="SELECT * FROM product WHERE idproductcategory = '1'";
+$products = $db->query($sql); 
+?>
+
 	<h2>Snowboards</h2>
-	<p>	
-				
-		<img src="images/BurtonCustom.png"><br>
-		<?php
-		$board1 = '<h3>Burton Custom 2020</h3>'; 
-		echo $board1;
-		echo '<br>';
-		$price1 = '<h4>499€</h4>';
-		echo '<p>Price:</p>';
-		echo $price1;		
-		?>
-		<br>
-		
-			<form class="" action="shoppingcart.php" method="post">
-			<input type="number" name="Amount" value="" placeholder="Amount"> <br>
-			<select class="" name="boardsize" placeholder="Size">
-					<option value="150">150 cm</option>
-					<option value="156">156 cm</option>
-					<option value="160">160 cm</option>
-				</select>
-				<br>
-				<br>
-				<input type="submit" name="" value="Add to Cart">
-				</form>
-		
-		
-		
-		
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>	
+	<p>
+		<ul>
+			<?php
 			
-		<img src="images/NitroT1.png"><br>
-		<?php
-		$board2 = '<h3>Nitro T1</h3>'; 
-		echo $board2;
-		echo '<br>';
-		$price2 = '<h4>549€</h4>';
-		echo '<p>Price:</p>';
-		echo $price2;		
-		?>
-		<br>	
-		<form class="" action="shoppingcart.php" method="post">
-			<input type="number" name="Amount" value="" placeholder="Amount"> <br>
-			<select class="" name="boardsize" placeholder="Size">
-				<option value="150">150 cm</option>
-				<option value="156">156 cm</option>
-				<option value="160">160 cm</option>
-			</select>
-			<br>
-			<br>
-			<input type="submit" name="" value="Add to Cart">
+			foreach ($products as $row) {
+				echo '<ul>';
+				echo '<img src="images/'.$row['image'].'" alt="product image"> <br>';
+				echo '<h3>';
+				echo $row['brand'].'';
+				echo ' ';
+				echo $row['name'].'<br>';
+				echo '</h3>';
+				echo '<p>';
+				echo 'Size: ';
+				echo $row['size'].' cm <br>';
+				echo $row['price'].' € <br>';
+				echo 'Stock: ';
+				echo $row['stock'].'<br>';
+				echo '</p>';
+				echo '<br>';
+				
+				if(isset($_SESSION['logged_in'])){
+					//echo '<a href="basket.php?idproduct='.$row['idproduct'].'">To basket</a>';
+					echo '<br>';
+					echo '<form action="shoppingcart.php" method="post">';
+					echo '<label>Amount:</label>';
+					echo '<input type="number" name="amount"><br>';
+					echo '<input type="hidden" name="idproduct" value="'.$row['idproduct'].'"';
+					echo '<input type="hidden" name="brand" value="'.$row['brand'].'"';
+					echo '<input type="hidden" name="name" value="'.$row['name'].'"';
+					echo '<br>';
+					echo '<br><input type="submit" value="Add to basket">';
+					echo '</form>';
+				}
+				echo '</ul>';
+				echo '<hr>';
+			}
+			?>
+		</ul>		
 	</p>
+
 	<?php include "footer.php"; ?>
