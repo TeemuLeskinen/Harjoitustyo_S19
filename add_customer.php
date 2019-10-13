@@ -13,10 +13,17 @@ $stmt->bindParam(':lastname', $_POST['lname']);
 $stmt->bindParam(':address', $_POST['address']);
 $stmt->bindParam(':email', $_POST['email']);
 $stmt->bindParam(':phonenumber', $_POST['phone']);
-$stmt->execute();
+
+if($stmt->execute()){
+    echo '<p>Thank you for registering</p>';
+}
+
+else{
+    echo 'Registering failed';
+}
 
 
-echo '<p>Thank you for registering</p>';
+
 ?>
 
 <?php include "footer.php"; ?>
