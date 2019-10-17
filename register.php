@@ -15,8 +15,6 @@
     <input type="text" name="phone" value="" placeholder="Phone Number"><br>
     <br>
     <input type="submit" name="" value="Register">
-
-
 </form>
 
 <?php include "footer.php"; ?>

@@ -28,19 +28,17 @@ $products = $db->query($sql);
 				echo '</p>';
 				echo '<br>';
 				
-				if(isset($_SESSION['logged_in'])){
+				//if(isset($_SESSION['logged_in'])){
 					//echo '<a href="basket.php?idproduct='.$row['idproduct'].'">To basket</a>';
 					echo '<br>';
 					echo '<form action="shoppingcart.php" method="post">';
 					echo '<label>Amount:</label>';
 					echo '<input type="number" name="amount"><br>';
 					echo '<input type="hidden" name="idproduct" value="'.$row['idproduct'].'"';
-					echo '<input type="hidden" name="brand" value="'.$row['brand'].'"';
-					echo '<input type="hidden" name="name" value="'.$row['name'].'"';
 					echo '<br>';
 					echo '<br><input type="submit" value="Add to basket">';
 					echo '</form>';
-				}
+				//}
 				echo '</ul>';
 				echo '<hr>';
 			}

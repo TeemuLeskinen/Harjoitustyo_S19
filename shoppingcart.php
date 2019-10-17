@@ -1,9 +1,9 @@
 <?php 
 session_start();
-if(!isset($_SESSION['logged_in']))
-{
+//if(!isset($_SESSION['logged_in']))
+/*{
 	header('Location:not_logged.php');
-}
+}*/
 ?>
 <?php include "menu.php"; ?>
 <?php include "connection.php"; ?>
@@ -20,7 +20,7 @@ echo 'Your Shopping Cart: <br>';
 echo ''.$productid.'<br>';
 echo ''.$amount.'<br>';
 
-if(isset($_SESSION['logged_in'])){
+//if(isset($_SESSION['logged_in'])){
 	//echo '<a href="basket.php?idproduct='.$row['idproduct'].'">To basket</a>';
 	echo '<br>';
 	echo '<form action="order.php" method="post">';
@@ -29,7 +29,7 @@ if(isset($_SESSION['logged_in'])){
 	echo '<br>';
 	echo '<br><input type="submit" value="Order">';
 	echo '</form>';
-}
+//}
 //print_r($_POST);	
 ?>
 </p>

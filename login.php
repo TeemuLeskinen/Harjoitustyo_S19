@@ -5,8 +5,8 @@
     $annettu_tunnus=$_POST['username'];
     //$oikea_salasana='projekti123';
 
-    $stmt = $db->prepare("SELECT password FROM customer WHERE username=username");
-    $stmt->bindParam('username', $annettu_tunnus);
+    $stmt = $db->prepare("SELECT password FROM customer WHERE username=:username");
+    $stmt->bindParam(':username', $annettu_tunnus);
     $stmt->execute();
     $oikea_salasana = $stmt->fetch(PDO::FETCH_COLUMN);
     
